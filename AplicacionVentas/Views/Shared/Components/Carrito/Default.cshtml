@@ -1,0 +1,14 @@
+﻿@model CarritoViewModel
+
+@if (Model != null)
+{
+    <p>Item en el carrito:<span class="badge badge-primary">@Model.NumerodeItems</span> </p>
+    <p>Total:<b>@Model.MontoTotal.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</b></p>
+    <a class="btn btn-primary mb-2" asp-controller="Carro" asp-action="Index">Ver carrito</a>
+    <a class="btn btn-danger" asp-controller="Carro" asp-action="Clear">Limpiar carrito</a>
+}
+else
+{
+    <p class="lead m-0">Tu carrito esta vacio</p>
+}
+

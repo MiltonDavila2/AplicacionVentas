@@ -1,0 +1,63 @@
+﻿@model CarroViewModel
+
+@{
+    ViewData["Title"] = "Vista Carro";
+}
+
+
+
+
+@if (Model.ItemCarritos.Count > 0)
+{
+    
+
+
+    <table class="table">
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th></th>
+            <th>Precio</th>
+            <th>Total</th>
+        </tr>
+
+        @foreach(var item in Model.ItemCarritos)
+        {
+            <tr>
+                <td>@item.ProductoNombre</td>
+                <td>@item.Cantidad</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-action="Add" asp-route-id="@item.ProductoId">+</a>
+                    <a class="btn btn-info btn-sm" asp-action="Decrease" asp-route-id="@item.ProductoId">-</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Remove" asp-route-id="@item.ProductoId">Remover</a>
+
+                </td>
+
+                <td>@item.Precio.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</td>
+                <td>@Model.ItemCarritos.Where(x => x.ProductoId == item.ProductoId).Sum(x => x.Cantidad * x.Precio).ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</td>
+
+
+            </tr>
+        }
+        <tr>
+            <td class="text-right" colspan="4">Total Acumulado: @Model.TotalGrande.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</td>
+        </tr>
+
+        <tr>
+            <td class="text-right" colspan="4">
+                <a class="btn btn-danger" asp-action="Clear">Limpiar Carro</a>
+                <a class="btn btn-primary" href="#">Finalizar compra</a>
+            </td>
+        </tr>
+
+    </table>
+}
+else
+{
+    <h3 class="display-4 text-center">Tu carrito esta vacio.</h3>
+}
+
+
+
+
+

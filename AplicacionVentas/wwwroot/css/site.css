@@ -1,0 +1,102 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.btn-custom{
+    background-color: darkslategray;
+    color:white;
+}
+
+
+.custom-list {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    background-color: #0a944d;
+}
+
+/* Estilo para los elementos de la lista */
+.custom-list-item {
+    padding: 10px 0; /* Ajusta el relleno vertical de cada elemento */
+    border-bottom: 1px solid #ccc; /* Agrega una línea divisoria entre los elementos */
+}
+
+/* Estilo para los enlaces */
+.custom-link {
+    color: #333; /* Cambia el color del texto */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+    /* Estilo para los enlaces al pasar el cursor sobre ellos */
+q.custom-link:hover {
+    color: #0c9167; /* Cambia el color del texto cuando se pasa el cursor sobre el enlace */
+}
+
+
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    background-color: #2f4f4f;
+}
+
+/* Estilo para los enlaces de paginación */
+.pagination-link {
+    padding: 5px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #2f4f4f;
+}
+
+    /* Estilo para el enlace activo de paginación */
+    .pagination-link.active {
+        background-color: #2f4f4f;
+        color: #fff;
+    }
+
+
+h4 {
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+
+
+    header{
+        background-color: darkcyan;
+        
+    }
+
+h1 {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 600;
+    color: #333333;
+}
+
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #333333;
+}
+    }
